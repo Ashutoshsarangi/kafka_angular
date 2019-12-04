@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import io from 'socket.io-client';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-// import { Socket } from 'ngx-socket-io';
 
 
 
@@ -13,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class WebService {
 
   private socket: any;
-  readonly url = 'http://localhost:3000/';
+  readonly url = 'http://43.241.63.44:3000/';
   constructor(private http: HttpClient) {
     this.socket = io(this.url);
   }
