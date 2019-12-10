@@ -9,11 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Reliance</td>
+    <tr *ngFor="let data of storageArray let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{data.share}}</td>
       <td>India</td>
-      <td>{{sharePrice}} Rs.</td>
+      <td>{{data.sharePrice}} Rs.</td>
     </tr>
   </tbody>
 </table>

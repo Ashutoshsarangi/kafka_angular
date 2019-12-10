@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import io from 'socket.io-client';
 import { Observable } from 'rxjs';
+import { LCONTAINER_LENGTH } from '@angular/core/src/render3/interfaces/container';
 
 
 
@@ -25,6 +26,14 @@ export class WebService {
   }
   public emit = (eventName: string, data: any) => {
     this.socket.emit(eventName, data);
+  }
+
+  public getLocalStorage = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+  }
+
+  public setLocalStorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
 }
